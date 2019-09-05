@@ -4,6 +4,8 @@
   "description": "This APIs will help me to capture my daily worksouts at Gym",
   "main": "app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/priyankthakkar/worksouts-api/issues"
   },
-  "homepage": "https://github.com/priyankthakkar/worksouts-api#readme"
+  "homepage": "https://github.com/priyankthakkar/worksouts-api#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
 }
