@@ -10,35 +10,13 @@ const {
 const {
     connectionString,
     connectionOptions
-} = require('src/utils/database')
+} = require('src/utils/database');
+const typeDefs = require('./graphql/schemas');
+const resolvers = require('./graphql/resolvers');
 
 const app = express();
 
 const port = process.env.PORT || 8080
-
-// Some fake data
-const books = [{
-        title: "Harry Potter and the Sorcerer's stone",
-        author: 'J.K. Rowling',
-    },
-    {
-        title: 'Jurassic Park',
-        author: 'Michael Crichton',
-    },
-];
-
-// The GraphQL schema in string form
-const typeDefs = `
-    type Query { books: [Book] }
-    type Book { title: String, author: String }
-  `;
-
-// The resolvers
-const resolvers = {
-    Query: {
-        books: () => books
-    },
-};
 
 const server = new ApolloServer({
     typeDefs,
